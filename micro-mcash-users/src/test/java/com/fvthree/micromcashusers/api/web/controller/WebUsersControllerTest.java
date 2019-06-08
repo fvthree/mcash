@@ -53,11 +53,11 @@ public class WebUsersControllerTest {
 	
 	private WebUsers user;
 	
-    private static final ObjectMapper om = new ObjectMapper();
+    	private static final ObjectMapper om = new ObjectMapper();
 	
 	@Before
-    public void init() {
-		user = new WebUsers(1L, JOHNWICK_ONE_USERNAME, JOHNWICK_ONE_PASSWORD, JOHNWICK_ONE_EMAIL, new Date(), new Date());
+        public void init() {
+	    user = new WebUsers(1L, JOHNWICK_ONE_USERNAME, JOHNWICK_ONE_PASSWORD, JOHNWICK_ONE_EMAIL, new Date(), new Date());
 	}
 	
 	@Test
@@ -121,7 +121,6 @@ public class WebUsersControllerTest {
 				.contentType(MediaType.APPLICATION_JSON);
 		
 		
-		mockMvc.perform(request)
-	      	   .andExpect(status().isCreated());
+		mockMvc.perform(request).andExpect(status().isCreated());
 	}
 }
