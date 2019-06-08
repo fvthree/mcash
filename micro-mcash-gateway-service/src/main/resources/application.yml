@@ -1,0 +1,46 @@
+info:
+  component: MCash Server
+  
+spring:
+  application:
+    name: micro-mcash-gateway-server
+  profiles: container
+  cloud:
+    circuit:
+      breaker:
+        enabled: false  
+  
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+    
+zuul:
+  prefix: /mcash-api
+  routes:
+    user:
+      path: /user/**
+      serviceId: webusers-service
+  host:
+    connect-timeout-millis: 60000
+    socket-timeout-millis: 60000
+      
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    fetchRegistry: true
+  instance:
+    leaseRenewalIntervalInSeconds: 20
+    leaseExpirationDurationInSeconds: 20
+
+server:
+  port: 8765
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: DEBUG
