@@ -15,7 +15,7 @@
 		<aspectj.version>1.6.11</aspectj.version>
 		<dbcp-version>1.4</dbcp-version>
 		<log4j>1.2.17</log4j>
-		<spring-version>5.1.5.RELEASE</spring-version>
+		<spring-version>5.1.11.RELEASE</spring-version>
 	</properties>
 
 	<build>
